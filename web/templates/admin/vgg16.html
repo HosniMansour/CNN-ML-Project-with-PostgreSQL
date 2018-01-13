@@ -1,0 +1,57 @@
+{% extends "admin/index.html" %}
+
+{% block body %}
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item">Dashboard</li>
+    </ol>
+
+    <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> VGG 16 predections</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>Image</th>
+                  <th>Predection</th>
+                  <th>Image Name</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>id</th>
+                  <th>Image</th>
+                  <th>Predection</th>
+                  <th>Image Name</th>
+                  <th>Action</th>
+                </tr>
+              </tfoot>
+              <tbody>
+              {% for o in obj %}
+                <tr>
+                  <td>{{ o.id }}</td>
+                  <td><img style="height: 100px;" src="{{ url_for('vgg_img', id=o.id)}}"  /></td>
+                  <td>
+                  <ol>
+                      {% for oo in o.predection %}
+                          <li><b>{{ oo }}</b></li>
+                      {% endfor %}
+                  </ol>
+                  </td>
+                  <td>{{ o.filename }}</td>
+                  <td><a href="{{ url_for('removevgg', id=o.id)}}"><button type="button" class="btn btn-danger">Remove</button></a></td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+{% endblock %}
