@@ -6,7 +6,7 @@ I used PostgreSQL to save the uploaded images with tags...
 
 ![alt text](https://github.com/HosniMansour/CNN-ML-Project-with-postgresql/blob/master/Screenshot/home.PNG?raw=true)
 
-So to run this project you need have the previous repo files, instructions to run the prvious project are here : http://blog.hosni.me/2018/01/a-cnn-machine-learning-project-using.html
+So to run this project you need have the previous repo files, instructions to run the previous project are here : http://blog.hosni.me/2018/01/a-cnn-machine-learning-project-using.html
 
 Add the files of this repo and replace flaskr.py file, Config PostgreSQL in this line :
 
